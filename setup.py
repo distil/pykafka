@@ -161,12 +161,4 @@ def run_setup(with_rdkafka=True):
         ]
     )
 
-try:
-    run_setup()
-except ve_build_ext.BuildFailed as exc:
-    print(15 * "-")
-    print("INFO: Failed to build rdkafka extension:")
-    print(exc.cause)
-    print("INFO: will now attempt setup without extension.")
-    print(15 * "-")
-    run_setup(with_rdkafka=False)
+run_setup()
